@@ -25,7 +25,7 @@ def downImg(target):
     import os
     import urllib.request
 
-    path = "C:/Users/jeon_minGyu/Desktop/zzam/DeepLearnningTest/image/" + target
+    path = os.path.abspath(__file__) + "/image/" + target
 
     if not os.path.isdir(path):
         os.makedirs(path)
@@ -33,8 +33,6 @@ def downImg(target):
     for i, url in enumerate(urls):
         if url != None:
             urllib.request.urlretrieve(url, path + f'/{i}.jpg')
-
-
 
 
 if __name__ == "__main__":
